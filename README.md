@@ -27,7 +27,7 @@ HAVING Total_order < 1000 AND Total_inventory > 150000
 ORDER BY Total_inventory DESC;
 ```
 #### Findings
-This Analysis offers insights into how individual product items sales (Total_order) compare to its quantity in store (Total_inventory). The significance of this analysis is it can help Mint classics identify Productcts from each productlines that are not moving therefore enabling the organisation drop any product from a productline.
+This Analysis offers insights into how individual product items sales (Total_order) compare to its quantity in store (Total_inventory). The significance of this analysis is it can help Mint classics identify Products from each productlines that are not moving by setting the limit for sales as Total_order to be less than 1000 and Total quantity in stock as Total_inventory to be greater than 150000, therefore enabling the organisation drop any product from a productline.
 
 #### Warehouse inventory worth and sales comparison 
 ```SQL
