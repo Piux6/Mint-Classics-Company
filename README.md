@@ -14,6 +14,7 @@ The answers to questions like those should help you to formulate suggestions and
 3. Provide analytic insights and data-driven recommendations.
 
 ### DATA ANALYSIS:
+#### Items Sales compared to Quantity in Stock
 ```SQL
 SELECT P.productCode, 
        P.productName, 
@@ -23,5 +24,10 @@ FROM orderdetails OD
 JOIN products P ON OD.productCode = P.productCode
 GROUP BY P.productCode, P.productName
 HAVING Total_order < 1000 AND Total_inventory > 150000
-ORDER BY Total_inventory DESC 
+ORDER BY Total_inventory DESC
 
+#### Findings
+This Analysis offers insights into how individual product items sales (Total_order)
+compare to its quantity in store (Total_inventory). The significance of this analysis
+is it can help Mint classics identify Productcts from each productlines that are not
+moving therefore enabling the organisation drop any product from a productline. 
