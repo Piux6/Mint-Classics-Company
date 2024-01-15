@@ -24,3 +24,4 @@ JOIN products P ON OD.productCode = P.productCode
 GROUP BY P.productCode, P.productName
 HAVING Total_order < 1000 AND Total_inventory > 150000
 ORDER BY Total_inventory DESC 
+
