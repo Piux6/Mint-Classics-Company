@@ -79,7 +79,12 @@ This analysis presents the warehouse with shipment dates later than the supposed
 
 #### Office with delayed shippments
 ```SQL
-SELECT OFC.officeCode, OFC.state, OFC.country, COUNT(orderNumber)
+SELECT employeeNumber, 
+       firstName, 
+       lastName, 
+       OFC.country, 
+       OFC.officeCode, 
+       COUNT(orderNumber) 
 FROM payments P
 JOIN customers C
     USING (customerNumber)
@@ -94,7 +99,7 @@ JOIN orderdetails OD
 JOIN products PR
     USING (productCode)
 WHERE  requiredDate < shippedDate
-GROUP BY officeCode;
+GROUP BY employeeNumber;
 ```
 #### Findings 
-This analysis presents the office with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.
+This analysis presents the office and employee information that handled orders with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.
