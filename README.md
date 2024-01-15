@@ -26,5 +26,6 @@ GROUP BY P.productCode, P.productName
 HAVING Total_order < 1000 AND Total_inventory > 150000
 ORDER BY Total_inventory DESC;
 ```
-
+#### Findings
+This Analysis offers insights into how individual product items sales (Total_order) compare to its quantity in store (Total_inventory). The significance of this analysis is it can help Mint classics identify Productcts from each productlines that are not moving therefore enabling the organisation drop any product from a productline.
 
