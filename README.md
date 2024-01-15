@@ -55,7 +55,8 @@ ORDER BY Total_Quantity DESC;
 ```
 
 ```SQL
-SELECT PR.warehouseCode, COUNT(orderNumber) FROM payments P
+SELECT PR.warehouseCode, COUNT(orderNumber)
+FROM payments P
 JOIN customers C
     USING (customerNumber)
 JOIN orders O
@@ -66,4 +67,22 @@ JOIN products PR
     USING (productCode)
 WHERE  requiredDate < shippedDate
 GROUP BY warehouseCode;
+```
+```SQL
+SELECT OFC.officeCode, OFC.state, OFC.country, COUNT(orderNumber)
+FROM payments P
+JOIN customers C
+    USING (customerNumber)
+JOIN employees E
+     ON salesRepEmployeeNumber = employeeNumber
+JOIN offices OFC
+    USING (officeCode)
+JOIN orders O
+    USING (customerNumber)
+JOIN orderdetails OD
+    USING (OrderNumber)
+JOIN products PR
+    USING (productCode)
+WHERE  requiredDate < shippedDate
+GROUP BY officeCode;
 ```
