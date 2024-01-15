@@ -1,4 +1,12 @@
 # Mint-Classics-Company
+## Table of Contents
+- [BUSINESS UNDERSTANDING](business-understanding)
+- [BUSINESS OBJECTIVE](business-objective)
+- [PROJECT OBJECTIVE](projective-objective)
+- [DATA ANALYSIS](data-analysis)
+- [RECOMMENDATIONS](recommendations)
+
+  
 A Data Analytics project that helps to analyze data in a relational database with the goal of supporting inventory-related business decisions that lead to the closure of a storage facility.
 ### BUSINESS UNDERSTANDING: 
 Mint Classics Company, a retailer of classic model cars and other vehicles, is looking at closing one of their storage facilities. To support a data-based business decision, they are looking for suggestions and recommendations for reorganizing or reducing inventory, while still maintaining timely service to their customers. 
