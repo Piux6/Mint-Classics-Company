@@ -24,7 +24,7 @@ FROM orderdetails OD
 JOIN products P ON OD.productCode = P.productCode
 GROUP BY P.productCode, P.productName
 HAVING Total_order < 1000 AND Total_inventory > 150000
-ORDER BY Total_inventory DESC ```
+ORDER BY Total_inventory DESC```
 #### Findings
 This Analysis offers insights into how individual product items sales (Total_order)
 compare to its quantity in store (Total_inventory). The significance of this analysis
