@@ -14,7 +14,7 @@ The answers to questions like those should help you to formulate suggestions and
 3. Provide analytic insights and data-driven recommendations.
 
 ### DATA ANALYSIS:
----SQL
+```SQL
 SELECT P.productCode, 
        P.productName, 
        SUM(OD.quantityOrdered) AS Total_order, 
