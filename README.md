@@ -43,7 +43,8 @@ JOIN orderdetails OD
 GROUP BY warehouseCode;
 ```
 #### Findings
-The Analysis of warehouse inventory worth and sales comparison provides insights into the value of a each warehouse by calculating the worth of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue.   
+The Analysis of warehouse inventory worth and sales comparison provides insights into the value of a each warehouse by calculating the worth of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue if needed.
+
 #### Number of quantity in stock for each Warehouse
 ```SQL
 SELECT warehouseName, warehousePctCap, 
@@ -55,7 +56,8 @@ JOIN warehouses W
 GROUP BY WarehouseName, warehouseCode
 ORDER BY Total_Quantity DESC;
 ```
-
+#### Findings 
+The Analysis of Number of quantity in stock for each warehouse by calculating the sum of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue if needed.
 ```SQL
 SELECT PR.warehouseCode, COUNT(orderNumber)
 FROM payments P
