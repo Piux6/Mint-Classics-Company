@@ -12,3 +12,15 @@ The answers to questions like those should help you to formulate suggestions and
 1. Explore products currently in inventory.
 2. Determine important factors that may influence inventory reorganization/reduction.
 3. Provide analytic insights and data-driven recommendations.
+
+### DATA ANALYSIS:
+---SQL
+SELECT P.productCode, 
+       P.productName, 
+       SUM(OD.quantityOrdered) AS Total_order, 
+       SUM(P.quantityInStock) AS Total_inventory
+FROM orderdetails OD
+JOIN products P ON OD.productCode = P.productCode
+GROUP BY P.productCode, P.productName
+HAVING Total_order < 1000 AND Total_inventory > 150000
+ORDER BY Total_inventory DESC 
