@@ -66,4 +66,4 @@ JOIN products PR
     USING (productCode)
 WHERE  requiredDate < shippedDate
 GROUP BY warehouseCode;
-`` 
+```
