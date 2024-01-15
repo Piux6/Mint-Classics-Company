@@ -41,5 +41,13 @@ JOIN warehouses W
 JOIN orderdetails OD
      USING (productCode)
 GROUP BY warehouseCode;
+SELECT warehouseName, warehousePctCap, 
+warehouseCode, 
+SUM(P.quantityInStock) AS Total_Quantity 
+FROM products P
+JOIN warehouses W
+    USING (warehouseCode)
+GROUP BY WarehouseName, warehouseCode
+ORDER BY Total_Quantity DESC;
 ```
 
