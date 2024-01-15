@@ -58,6 +58,8 @@ ORDER BY Total_Quantity DESC;
 ```
 #### Findings 
 The Analysis of Number of quantity in stock for each warehouse by calculating the sum of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue if needed.
+
+#### Warehouses with delayed shippments
 ```SQL
 SELECT PR.warehouseCode, COUNT(orderNumber)
 FROM payments P
@@ -72,6 +74,10 @@ JOIN products PR
 WHERE  requiredDate < shippedDate
 GROUP BY warehouseCode;
 ```
+#### Findings 
+This analysis presents the warehouse with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.  
+
+#### Office with delayed shippments
 ```SQL
 SELECT OFC.officeCode, OFC.state, OFC.country, COUNT(orderNumber)
 FROM payments P
@@ -90,3 +96,5 @@ JOIN products PR
 WHERE  requiredDate < shippedDate
 GROUP BY officeCode;
 ```
+#### Findings 
+This analysis presents the office with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.
