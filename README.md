@@ -54,3 +54,16 @@ GROUP BY WarehouseName, warehouseCode
 ORDER BY Total_Quantity DESC;
 ```
 
+```SQL
+SELECT PR.warehouseCode, COUNT(orderNumber) FROM payments P
+JOIN customers C
+    USING (customerNumber)
+JOIN orders O
+    USING (customerNumber)
+JOIN orderdetails OD
+    USING (OrderNumber)
+JOIN products PR
+    USING (productCode)
+WHERE  requiredDate < shippedDate
+GROUP BY warehouseCode;
+`` 
