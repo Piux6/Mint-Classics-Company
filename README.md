@@ -29,3 +29,17 @@ ORDER BY Total_inventory DESC;
 #### Findings
 This Analysis offers insights into how individual product items sales (Total_order) compare to its quantity in store (Total_inventory). The significance of this analysis is it can help Mint classics identify Productcts from each productlines that are not moving therefore enabling the organisation drop any product from a productline.
 
+#### Possible warehouse elimination
+```SQL
+SELECT warehouseName, 
+warehouseCode, 
+SUM(quantityInStock * buyPrice) AS Worth, 
+SUM(quantityOrdered * priceEach) AS Sales
+FROM products P
+JOIN warehouses W
+    USING(warehouseCode)
+JOIN orderdetails OD
+     USING (productCode)
+GROUP BY warehouseCode;
+```
+
