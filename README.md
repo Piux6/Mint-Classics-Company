@@ -35,6 +35,9 @@ HAVING Total_order < 1000 AND Total_inventory > 150000
 ORDER BY Total_inventory DESC
 LIMIT 3;
 ```
+![sql1](https://github.com/Piux6/Mint-Classics-Company/assets/128375363/7abcc8d8-401b-4440-938b-a121e6f53e8f)
+
+
 #### Findings
 This Analysis offers insights into how individual product items sales (Total_order) compare to its quantity in store (Total_inventory). The significance of this analysis is it can help Mint classics identify Products from each productlines that are not moving by setting the limit for sales as Total_order to be less than 1000 and Total quantity in stock as Total_inventory to be greater than 150000, therefore enabling the organisation drop any product from a productline.
 
@@ -51,6 +54,9 @@ JOIN orderdetails OD
      USING (productCode)
 GROUP BY warehouseCode;
 ```
+![sql3](https://github.com/Piux6/Mint-Classics-Company/assets/128375363/5a917392-4bc0-4575-8101-421ee916c83f)
+
+
 #### Findings
 The Analysis of warehouse inventory worth and sales comparison provides insights into the value of a each warehouse by calculating the worth of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue if needed.
 
@@ -65,6 +71,8 @@ JOIN warehouses W
 GROUP BY WarehouseName, warehouseCode
 ORDER BY Total_Quantity DESC;
 ```
+![sql2](https://github.com/Piux6/Mint-Classics-Company/assets/128375363/b1321250-afb9-40cc-83b7-d42bc4cc7a1b)
+
 #### Findings 
 The Analysis of Number of quantity in stock for each warehouse by calculating the sum of products in stock and returns on quantity ordered from each warehouse. This analysis will help Mint Classics make decisions on rearranging inventory and possibly eliminating a warehoue if needed.
 
@@ -83,6 +91,9 @@ JOIN products PR
 WHERE  requiredDate < shippedDate
 GROUP BY warehouseCode;
 ```
+![sql3](https://github.com/Piux6/Mint-Classics-Company/assets/128375363/bb15df18-fd48-47fb-8c6c-d918bdac9200)
+
+
 #### Findings 
 This analysis presents the warehouse with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.  
 
@@ -110,6 +121,8 @@ JOIN products PR
 WHERE  requiredDate < shippedDate
 GROUP BY employeeNumber;
 ```
+![sql5](https://github.com/Piux6/Mint-Classics-Company/assets/128375363/dd25f6c0-e972-4b12-8bca-db8a4e40dae3)
+
 #### Findings 
 This analysis presents the office and employee information that handled orders with shipment dates later than the supposed delivery date (requiredDate). This will enable Mint classics easily identify and solve problems associated with delayed shippment as it plans to improve order efficiency and deliver within 24 Hours.
 
